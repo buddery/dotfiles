@@ -1,0 +1,111 @@
+*
+
+{
+font: 				"FontAwesome 16";
+bg				:#121437; 
+background			:@bg;
+background-alt			:@bg;
+red				:#c7777d;
+green				:#2DFFBC;
+blue				:#777dc7;
+pink				:#c777bf;
+purple				:#7e44a8;
+bgc				:transparent;
+acent				:#7DCFFF;
+text-color			:@acent;
+tint				:#22222260;
+tinted				:#22222280;
+urgent				:@red;
+selected			:@green;
+foreground			:@text-color;
+active				:@blue;
+}
+
+mainbox {
+background-color: @bgc;
+  padding : 1px;
+  spacing : 10px;
+
+}
+
+
+window {
+
+	location		:north;
+	width			:2500px;
+	y-offset		:35px;
+	border-radius		:20px;
+        border			:5px;
+	background-color	:transparent;
+        border-color		:@text-color;
+}
+entry{
+placeholder			:"";
+padding				:0px;
+border-color			:@purple;
+border-radius			: 20px;
+border:				 2px;
+hight 				: 20px;
+placeholder-color		:@purple;
+background-color		:@tinted;
+}
+
+listview {
+    background-color    : @tint;
+    lines               :20;
+    border-radius	:20;
+}
+
+element {
+background-color	:@tint;
+}
+
+
+element selected active {
+    background-color:   #23232355;
+    text-color:   	#ffffff;
+}
+
+element selected normal 
+
+{
+  background-color	:@tinted;
+  text-color		:@green;
+}
+
+element normal normal,
+{
+background-color:	@tint;
+foreground-color:	white;
+text-color:		#7dcfff;
+}
+
+element alternate normal {
+background-color	:@tinted;
+text-color		:@text-color;
+}
+
+element selected urgent {
+    background-color:   @purple;
+}
+
+prompt {
+   text-color  		: @purple;
+   background-color	: @bg;
+   border		: 2px;
+   padding		: 4px;
+   border-radius	: 15px;
+   background-colour	: transparent;
+
+}
+
+
+listview {
+	background-color	: transparent;
+}
+
+element{}
+
+element normal active {
+ text-color: @purple;
+}
