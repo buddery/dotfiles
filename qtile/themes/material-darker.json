@@ -1,0 +1,12 @@
+{
+    "black": "#000000",
+    "red": "#ff5370",
+    "green": "#c3e88d",
+    "yellow": "#ffcb6b",
+    "blue": "#82aaff",
+    "purple": "#c792ea",
+    "cyan": "#89ddff",
+    "white": "#ffffff",
+    "background": "#212121",
+    "foreground": "#eeffff"
+}
