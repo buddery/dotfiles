@@ -1,0 +1,24 @@
+;; Spotify vars
+(defpoll COVER :interval "1s" `~/.config/eww/scripts/spotify/spotify-artwork.sh`)
+;;(defpoll ARTWORK :interval "1s" '~/.config/conky/spotify/scripts/cover.sh')
+
+;; spotify
+(defwidget albumart []
+        (box :class "art" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                (box :class "album_art" :vexpand "false" :hexpand "false" :style "background-image: url('${COVER}');")
+                                ))
+
+
+
+
+(defwindow albumart
+   :monitor 0
+   :geometry (geometry :x "255px"
+                        :y "10px"
+                        :width"80px"
+                         :height"10000px"
+                          :anchor "bottom left")
+               :stacking "bg"
+               :windowtype "dock"
+(albumart)) 
+

@@ -1,0 +1,17 @@
+(defwidget audio []
+			(box :vexpand "false" :hexpand "false"
+				(box :orientation "h" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+					(box :class "volume_bar" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+                            (scale :flipped "true" :orientation "v" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                            (label  :text "󰋋 " :class "vol_icon"))
+					)))
+
+(defwidget audiov []
+                        (box :vexpand "false" :hexpand "false"
+                                (box :orientation "v" :spacing 25 :halign "center" :vali>
+                                        (box :class "volume_bar" :orientation "v" :spaci>
+                            (scale :flipped "true" :orientation "v" :min 0 :max 101 :val>
+                            (label  :text "󰋋 " :class "vol_icon"))
+                                        )))
+(defwidget audiov []
+                        (box :vexpand "false" :hexpand "false"

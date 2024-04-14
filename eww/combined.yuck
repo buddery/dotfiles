@@ -1,0 +1,32 @@
+
+
+(defwindow volume
+           :monitor 0
+           :geometry (geometry :x "1200px"
+                               :y "20px"
+                               :width "15px"
+                               :height "200px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore true
+  (audio))
+  
+  (defwidget audio []
+			(box :vexpand "false" :hexpand "true"
+				(box :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "true"
+					(box :class "volume_bar" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+                            (scale :flipped "true" :orientation "v" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                            (label  :text "󰋋 " :class "vol_icon"))
+					)))				
+
+(defwidget audiov []
+				(box :orientation "h" 
+					(box :class "volume_bar" :orientation "v"
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                          
+					)))
+
+
+

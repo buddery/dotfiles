@@ -1,0 +1,35 @@
+(defwidget nord_entry [label icon onclick]
+    (box :orientation "v" :space-evenly false :class "nord"
+        (button :class "nord" :onclick {onclick}
+            (label :class "nord" :text {icon} )
+        )
+        (label :class "nord" :text {label})
+    )
+)
+
+(defwidget nord []
+    (box :orientation "h" :space-evenly true :valign "center" :halign "center" :class "nord"
+        (nord_entry    :label "Switzerland"
+                       :icon " 󰺕 "
+                       :onclick "nordvpn connect switzerland && eww close nord")
+        (nord_entry    :label "UK"
+                       :icon " 󰺕 "  
+                       :onclick "nordvpn connect gb && eww close nord")
+        (nord_entry    :label "disconnect"
+                       :icon " 󰅙 "  
+                       :onclick "nordvpn disconnect && eww close nord")
+            
+    )
+)
+
+
+(defwindow nord
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "top left"
+                    :width "20%"
+                    :height "20%")
+    :namespace "eww-blur"
+    (nord)
+)

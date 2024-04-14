@@ -1,0 +1,76 @@
+;;(defpoll volume :interval "1s"
+;;  "volume.sh")
+
+
+;; Weather vars
+;;(defpoll WEATHER :interval "5m" `scripts/weather.sh`)
+
+;; Music vars
+;;(defpoll SONG :interval "1s" `scripts/spotify/spotify-song.sh`)
+;;(defpoll ARTIST :interval "1s" `scripts/spotify/spotify-artist.sh`)
+;;(defpoll COVER :interval "1s" `scripts/spotify/spotify-artwork.sh`)
+;;(defpoll STATUS :interval "1s" `scripts/spotify/spotify-status.sh`)
+(defpoll volume_percent :interval "6s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+;;(defpoll mic_percent :interval "6s" "amixer -D pulse sget Capture | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+
+;; Battery vars
+;;(defpoll BATICON :interval "1s" `scripts/battery.sh --icon`)
+;;(defpoll BATPERC :interval "10s" `scripts/battery.sh --perc`)
+
+;;(defpoll VOLICON :interval "1s" `volume --icon`)
+(defpoll VOLUME :interval "1s" `volume --get`)
+(defpoll current-volume :interval "1s" "amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }' | tr -d '%'")
+(defvar volum false)
+
+;;(defpoll art            :interval "5s"  "~/.config/qtile/music.sh coverloc")
+;;(defpoll title          :interval "5s"  "~/.config/qtile/music.sh title")
+;;(defpoll artist         :interval "5s"  "~/.config/qtile/music.sh artist")
+;;(defpoll playpause      :interval "5s"  "~/.config/qtile/music.sh statusicon")
+;;(defpoll songtime       :interval "1s"  "~/.config/qtile/song-duration.sh")
+;;(deflisten timer :interval "1s" "~/scripts/stopwatch.sh")
+
+
+(defpoll NAME  :interval "5m"  "echo casey")
+(defpoll UNAME :interval "5m"  "whoami")
+
+;; Systray Variables
+(defpoll ram-usage 			:interval "1s"  "~/.config/eww/scripts/sys_info --mem")
+(defpoll battery-capacity 	:interval "1s"  "~/.config/eww/scripts/sys_info --bat")
+(defpoll current-brightness :interval "1s"  "~/.config/eww/scripts/sys_info --bri")
+
+
+;; Time Variables
+(defpoll hour 	:interval "1s" `date +%H`)
+(defpoll minute :interval "1s" `date +%M`)
+(defpoll day 	:interval "1s" `date "+%A"`)
+(defpoll date 	:interval "1s" `date "+%D"`)
+	
+
+;; Quotes Variables
+(defpoll quote_text     :interval "10m" "~/.config/eww/scripts/quotes quote")
+(defpoll quote_author   :interval "10m" "~/.config/eww/scripts/quotes author")
+
+;; Weather Variables
+(defpoll weather-icon 		:interval "10m"  "~/.config/eww/scripts/getweather --icon")
+(defpoll weather-city 		:interval "10m"  "~/.config/eww/scripts/getweather --city")
+(defpoll weather-country 	:interval "10m"  "~/.config/eww/scripts/getweather --country")
+(defpoll weather-hex 		:interval "10m"  "~/.config/eww/scripts/getweather --hex")
+(defpoll temperature 		:interval "10m"  "~/.config/eww/scripts/getweather --temp")
+(defpoll weather-stat 		:interval "10m"  "~/.config/eww/scripts/getweather --stat")
+
+;; Todo Variables
+(defpoll todo 			        :interval "10s" "~/.config/eww/scripts/check-todo adaptive")
+(defpoll todo-num 		        :interval "10s" "~/.config/eww/scripts/check-todo adaptivenum")
+(defpoll todo-total 	        :interval "10s" "~/.config/eww/scripts/check-todo totnum")
+(defpoll todo-apri 		        :interval "10s" "~/.config/eww/scripts/check-todo apri")
+(defpoll todo-apri-num 	        :interval "10s" "~/.config/eww/scripts/check-todo aprinum")
+(defpoll otherpri 		        :interval "10s" "~/.config/eww/scripts/check-todo otherpri")
+(defpoll otherprinum 	        :interval "10s" "~/.config/eww/scripts/check-todo otherprinum")
+(defpoll next_appointment       :interval "1m"  "~/.config/eww/scripts/check-todo appoint")
+(defpoll next_appointment_time  :interval "1m"  "~/.config/eww/scripts/check-todo appoint-time")
+
+;; Task Variables
+(defpoll uptime			        :interval "60s"  "~/.config/eww/scripts/task up")
+(defpoll cpuavg			        :interval "60s"  "~/.config/eww/scripts/task cpuavg")
+(defpoll disk-usage		        :interval "1h"  "~/.config/eww/scripts/task disk")
+(defpoll mem-usage		        :interval "30s" "~/.config/eww/scripts/task mem")

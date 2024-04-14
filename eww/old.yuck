@@ -1,0 +1,94 @@
+
+
+
+(defvar osd "{ \"icon\": \"󰕾\", \"value\": 0 }")
+(defwidget osd [] (eventbox
+    :onclick "${EWW_CONFIG_DIR}/scripts/osd close"
+    (box :class "osd-widget"
+        (overlay
+            (progress
+                :class "scale"
+                :value {osd.value}
+                :valign "CENTER"
+                :halign "CENTER"
+                :orientation "v"
+                :flipped true
+            )
+            (label 
+                :text {osd.icon}
+                :valign "END" 
+                :halign "CENTER"
+                :class "icon"
+            )
+        )
+    )
+))
+
+(defwindow volume
+           :monitor 0
+           :geometry (geometry :x "1200px"
+                               :y "20px"
+                               :width "15px"
+                               :height "200px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore true
+  (audio))
+  
+ (defwindow volumeh
+           :monitor 0
+           :geometry (geometry :x "-270px"
+                               :y "1px"
+                               :width "130px"
+                               :height "15px"
+                               :anchor "top right")
+           :stacking "overlay"
+           :windowtype "toolbar"
+           :wm-ignore true
+  (audiov))
+  
+  (defwidget audio []
+			(box :vexpand "false" :hexpand "true"
+				(box :orientation "v" :spacing 25 :halign "center" :valign "center" :space-evenly "false" :vexpand "false" :hexpand "true"
+					(box :class "volume_bar" :orientation "v" :spacing 20 :space-evenly "false" :vexpand "false" :hexpand "false"
+                            (scale :flipped "true" :orientation "v" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                            (label  :text "󰋋 " :class "vol_icon"))
+					)))				
+
+(defwidget audiov []
+				(box :class "volume_bar"  :orientation "h" 
+					(box :class "volume_bar" :orientation "v"
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :value volume_percent :onchange "amixer -D pulse sset Master {}%" )
+                          
+					)))
+
+(defwidget music_ctl []
+	(box :orientation "v"
+          (box	:class "albumart" :vexpand "false" :hexpand "false" :style "background-image: url('${art}');")
+		(box :orientation "h" 
+			(button :class "previous" :hight "20px"
+			:onclick "spotifycli --previous" "󰼨 "
+			
+	)
+
+			(button :class "play" 
+			:onclick "spotifycli --play" " "
+	)
+			(button :class "next"
+			:onclick "spotifycli --next" "󰼧 "
+	)
+)))
+
+ (defwindow spotify
+           :monitor 0
+           :geometry (geometry :x "20px"
+                               :y "-100px"
+                               :width "220px"
+                               :height "520px"
+                               :anchor "center right")
+           :stacking "overlay"
+           :windowtype "toolbar"
+           :wm-ignore true
+  (music_ctl))

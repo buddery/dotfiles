@@ -1,0 +1,36 @@
+(defwidget system []
+                (box :class "dockbox"
+                        (box :orientation "h" :spacing 16 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                (button :onclick "scripts/widget_apps --ml"
+                                        (box :orientation "h" :spacing 8 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                                (box :style "background-image: url('images/icons/gmail.png');" :class "trayicon")
+                                                        ))
+                                (button :onclick "scripts/widget_apps --pow"
+                                        (box :orientation "h" :spacing 8 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                                (box :style "background-image: url('${BATICON}');" :class "trayicon")
+                                                        (label :class "infotext" :halign "start" :text BATPERC)))
+                                (button :onclick "scripts/volume --toggle"
+                                        (box :orientation "h" :spacing 8 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                                (box :style "background-image: url('${VOLICON}');" :class "trayicon")
+                                                        (label :class "infotext" :halign "start" :text VOLUME)))
+                                (button :onclick "scripts/widget_apps --nm"
+                                        (box :orientation "h" :spacing 8 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                                ))
+                                (button :onclick "sidedar/toggle_sidebar"
+                                        (box :orientation "h" :spacing 8 :valign "center" :halign "center" :space-evenly "false" :vexpand "false" :hexpand "false"
+                                               
+                                                        )))))
+
+
+(defwindow system
+           :monitor 0
+           :geometry (geometry :x "1420px"
+                               :y "20px"
+                               :width "480px"
+                               :height "60px"
+                               :anchor "top left")
+           :stacking "fg"
+           :reserve (struts :distance "80px" :side "top")
+           :windowtype "dock"
+           :wm-ignore false
+(ram))

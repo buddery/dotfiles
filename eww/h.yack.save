@@ -1,0 +1,12 @@
+(defwindow volumeh
+           :monitor 0
+           :geometry (geometry :x "1200px"
+                               :y "20px"
+                               :width "150px"
+                               :height "20px"
+                               :anchor "top center")
+           :stacking "fg"
+           :reserve (struts :distance "40px" :side "top")
+           :windowtype "dock"
+           :wm-ignore true
+  (audiov))

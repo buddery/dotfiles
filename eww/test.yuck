@@ -1,0 +1,30 @@
+(defwidget mine []
+        (box :class "genwin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
+                (box :class "hddbox" :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (box :space-evenly "false" :vexpand "false" :hexpand "false"
+                                (button :class "hddicon" :onclick "scripts/open_apps --fm" "")
+                                (label :class "fs_sep" :text "|"))
+                        (box :space-evenly "false" :vexpand "false" :hexpand "false"
+                                (label :class "hdd_label" :wrap "true" :limit-width 25 :text FREE)))
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon1" :onclick "scripts/open_folders --docs" "")
+)
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon2" :onclick "scripts/open_folders --dl" "󰷈")
+)
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon3" :onclick "scripts/open_folders --music" "")
+)
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon4" :onclick "scripts/open_folders --pics" "")
+)
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon5" :onclick "scripts/open_folders --cfg" "󰊫 " )
+)
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon6" :onclick "scripts/open_folders --local" " 󰸉 ")
+)))
+
+(defwindow mine :stacking "bg" :focusable "false" :screen 1
+            :geometry (geometry :x 14 :y 490 :width 290 :height 280 )
+                                        (apps))

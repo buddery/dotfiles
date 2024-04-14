@@ -1,0 +1,36 @@
+
+
+(defwidget mine []
+        (box :class "minewin" :orientation "v" :space-evenly "false" :vexpand "false" :hexpand "false"
+
+                        
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon1" :onclick "scripts/open_apps --ff" " "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon2" :onclick "scripts/open_apps --wd" "󰷈 "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon3" :onclick "scripts/open_apps --sp" " "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon4" :onclick "scripts/open_apps --tm" " "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon5" :onclick "scripts/open_apps --gm" "󰊫 " ))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon6" :onclick "scripts/open_apps --gp" " 󰸉 "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon6" :onclick "scripts/open_apps --th" " "))
+
+                (box :orientation "h" :space-evenly "false" :vexpand "false" :hexpand "false"
+                        (button :class "icon6" :onclick "scripts/open_apps --nd" " ")
+
+
+)))
+
+(defwindow mine :stacking "bg" :focusable "false" :screen 1
+            :geometry (geometry :x 20 :y 490 :width 29 :height 220 )
+                                        (mine))

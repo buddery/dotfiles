@@ -1,0 +1,13 @@
+(defwindow volumeh
+           :monitor 0
+           :geometry (geometry :x "-270px"
+                               :y "1px"
+                               :width "130px"
+                               :height "15px"
+                               :anchor "top right")
+           :stacking "overlay"
+           :windowtype "toolbar"
+           :wm-ignore true
+  (audiov))
+
+

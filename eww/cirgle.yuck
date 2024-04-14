@@ -1,0 +1,44 @@
+(defwindow circle
+	:monitor 0 
+	:geometry (geometry :x "100px"
+			:y "100px"
+			:width "1500px"
+			:hight "1500px"
+			:anchor "center center")
+	(cpu))
+
+(defwidget ram []
+        (box
+                :class "ram"
+        (box
+          :class "ramBox"
+          :tooltip "${round(EWW_RAM.used_mem/1073741824, 1)}GB"
+          :spacing -35
+          (circular-progress
+                :class "ramPie"
+                :start-at 75
+                :thickness 5
+                :value {round(EWW_RAM.used_mem_perc, 2)}
+          )
+          )
+        )
+  )
+
+
+(defwidget cpu []
+    (box
+    :class "cpu"
+    (box
+      :class "cpuBox"
+      :tooltip "${round(EWW_CPU.avg, 1)}%"
+      :spacing -35
+      (circular-progress
+      :class "cpuPie"
+      :start-at 75
+      :thickness 5
+      :value {round(EWW_CPU.avg, 1)}
+      )
+      
+      )
+    )
+  )

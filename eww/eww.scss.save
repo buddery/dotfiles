@@ -1,0 +1,84 @@
+@import '/home/craig/.config/eww/city.scss';
+
+*{
+   all: unset;
+   font-family: "Monofur"; 
+   color:$color4;
+}
+
+.icon {
+    all: unset;
+    font-size: 40px;
+    color: #ff0000;
+}
+
+.volume_bar, .brightness_bar, scale trough {
+        all: unset;
+        background-color: #282C34;
+        border-radius: 10px;
+        min-height: 18px;
+        min-width: 220px;
+        margin: 1px 0px 0px 0px;
+}
+
+.album_art {
+        background-size: 220px;
+        min-height: 220px;
+        min-width: 220px;
+        margin: 20px;
+        border-radius: 14px;
+}
+
+.volume_bar scale trough highlight {
+        all: unset;
+        background-color: $color4;
+        border-radius: 4px;
+}
+
+.wid_get {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px;
+        border-radius: 12px;
+}
+
+.song {
+        color: $color4;
+        font-size : 20px;
+        font-weight : bold;
+        margin : 40px 0px 0px 0px;
+}
+
+.artist {
+        color : $color4;
+        font-size : 20px;
+        font-weight : normal;
+        margin : 0px 0px 15px 0px;
+}
+
+
+.prev {
+        color: #ff0000;
+        font-size : 42px;
+        font-weight : normal;
+        margin: 0px 0px 0px 50px
+}
+
+.next {
+        color: $color4;
+        font-size : 42px;
+        font-weight : normal;
+        margin: 0px 40px 0px 0px
+}
+.play {
+        color: #A3BE8C;
+        font-size : 60px;
+        font-weight : bold;
+        margin: 0px 10px 0px 0px;
+}
+
+.mine {
+        background-color: #000000;
+        
+        border-radius: 25px;
+        padding: 0px 0px 0px 10px;
+}

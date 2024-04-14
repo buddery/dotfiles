@@ -1,0 +1,20 @@
+(defwindow volumeh
+           :monitor 0
+           :geometry (geometry :x "-270px"
+                               :y "1px"
+                               :width "130px"
+                               :height "15px"
+                               :anchor "top right")
+           :stacking "overlay"
+           :windowtype "toolbar"
+           :wm-ignore true
+  (audiov))
+
+(defwidget audiov []
+                                (box :class "volume_bar"  :orientation "h"
+                                        (box :class "volume_bar" :orientation "v"
+                            (scale :flipped "false" :orientation "h" :min 0 :max 101 :va>
+
+                                        )))
+
+

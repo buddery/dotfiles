@@ -1,0 +1,47 @@
+(defwidget powermenu_entry [label icon onclick]
+    (box :orientation "v" :space-evenly false :class "power"
+        (button :class "power" :onclick {onclick}
+            (label :class "minewin" :text {icon})
+        )
+        (label :class "power" :text {label})
+    )
+)
+
+(defwidget powermenu []
+    (box :orientation "v" :space-evenly false :valign "center" :halign "left" :class "mine"
+        (powermenu_entry    :label "Power off" 
+                            :icon "󰐥" 
+                            :onclick "systemctl poweroff")
+        (powermenu_entry    :label "Reboot" 
+                            :icon "󰜉" 
+                            :onclick "systemctl reboot")
+        (powermenu_entry    :label "Lock" 
+                            :icon "" 
+                            :onclick "sleep 0.1 && gtklock & eww close powermenu &")
+
+        (powermenu_entry    :label "Suspend" 
+                            :icon "󰤄" 
+                            :onclick "sleep 0.1 && gtklock & systemctl suspend & eww close powermenu &")
+                                
+        (powermenu_entry    :label "Sign out" 
+                            :icon "󰗼" 
+                            :onclick "hyprctl dispatch exit 0")
+
+        (powermenu_entry    :label "Cancel" 
+                            :icon "󰅖" 
+                            :onclick "eww close powermenu")
+            
+    )
+)
+
+
+(defwindow powermenu
+    :monitor 0
+    :stacking "overlay"
+    :geometry (geometry 
+                    :anchor "center"
+                    :width "0%"
+                    :height "0%")
+    :namespace "eww-blur"
+    (powermenu)
+)

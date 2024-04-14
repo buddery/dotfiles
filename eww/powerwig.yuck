@@ -1,0 +1,7 @@
+;;; power buttons
+(defwidget powerwig [] 
+	(box :class "wid_get" :vexpand "false" :hexpand "false" :orientation "v"
+		(button :class "btn_logout" :onclick "qtile cmd-obj -o cmd -f shutdown" "logout")
+		(button :class "btn_sleep" :onclick "systemctl suspend" "suspend")
+		(button :class "btn_restart" :onclick "systemctl reboot" "reboot")
+		(button :class "btn_poweroff" :onclick "systemctl poweroff" "Shutdown")))
